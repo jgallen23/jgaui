@@ -72,7 +72,7 @@ Response.extend({
 jga.ui.Control = function(elementId, options, defaults) {
 	this._elementId = elementId;
 	this.$node;
-	this._events = new EventManager();
+	this._events = new jga.core.EventManager();
 	this.options = this._getOptions(options, defaults);
 	var self = this;
 	self.dispatchEvent("init", self);
