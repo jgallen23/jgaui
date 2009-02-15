@@ -1,5 +1,7 @@
-var ui = {}
-var objects = {}
+var jga = {}
+jga.core = {}
+jga.ui = {}
+jga.objects = {}
 
 var DEBUG = false;
 
@@ -21,7 +23,7 @@ Function.prototype.extend = function(obj) {
 	}
 };
 
-var inherit = function(subClass, superClass) {
+jga.core.inherit = function(subClass, superClass) {
 	var F = function() {};
 	F.prototype = superClass.prototype;
 	subClass.prototype = new F();
@@ -33,10 +35,10 @@ var inherit = function(subClass, superClass) {
 	}
 };
 
-var EventManager = function() {
+jga.core.EventManager = function() {
 	this._events = {}
 }
-EventManager.extend({
+jga.core.EventManager.extend({
 	addEventListener: function(eventName, callback) {
 		if (!this._events[eventName])
 			this._events[eventName] = [];
@@ -60,14 +62,14 @@ EventManager.extend({
 	}
 });
 
-var Response = function(status, data) {
+jga.core.Response = function(status, data) {
 	this.status = status;
 	this.data = data;
 }
 Response.extend({
 });
 
-ui.Control = function(elementId, options, defaults) {
+jga.ui.Control = function(elementId, options, defaults) {
 	this._elementId = elementId;
 	this.$node;
 	this._events = new EventManager();
@@ -79,7 +81,7 @@ ui.Control = function(elementId, options, defaults) {
 		self.dispatchEvent("load", self);
 	});
 }
-ui.Control.extend({
+jga.ui.Control.extend({
 	addEventListener: function(event, callback) {
 		this._events.addEventListener(event, callback);
 	},
