@@ -3,7 +3,7 @@ jga.core = {}
 jga.ui = {}
 jga.objects = {}
 
-var DEBUG = false;
+var DEBUG = true;
 
 var log = function() {
 	if (DEBUG) {
@@ -66,22 +66,21 @@ jga.core.Response = function(status, data) {
 	this.status = status;
 	this.data = data;
 }
-Response.extend({
+jga.core.Response.extend({
 });
 
-jga.ui.Control = function(elementId, options, defaults) {
-	this._elementId = elementId;
+jga.core.Control = function(selector, options, defaults) {
 	this.$node;
 	this._events = new jga.core.EventManager();
 	this.options = this._getOptions(options, defaults);
 	var self = this;
 	self.dispatchEvent("init", self);
 	$(function() {
-		self.$node = $("#" + self._elementId);
+		self.$node = $(selector);
 		self.dispatchEvent("load", self);
 	});
 }
-jga.ui.Control.extend({
+jga.core.Control.extend({
 	addEventListener: function(event, callback) {
 		this._events.addEventListener(event, callback);
 	},
