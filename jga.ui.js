@@ -17,8 +17,8 @@ jga.ui.TextBoxHint = function(textboxSelector, hint) {
 		});
 	}
 	this.hint = hint;
-
-	this.showHint();
+	if (this.$element.val() == "" || this.$element.val() == hint)
+		this.showHint();
 
 	this.$element.bind("blur", function() {
 		if ($(this).val() == "") {
@@ -28,7 +28,7 @@ jga.ui.TextBoxHint = function(textboxSelector, hint) {
 
 
 };
-jga.ui.TextBoxHint.extend({
+jga.ui.TextBoxHint.methods({
 	showHint: function() {
 		if (this.isPassword) {
 			this.$element.hide();

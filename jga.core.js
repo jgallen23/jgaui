@@ -17,9 +17,23 @@ String.prototype.trim = function() {
 	return this.replace(/^\s+|\s+$/g, '')
 }
 
-Function.prototype.extend = function(obj) {
+Function.prototype.methods = function(obj) {
 	for (var o in obj) {
 		this.prototype[o] = obj[o];
+	}
+};
+
+
+jga.core.getOptions = function(options, defaults) {
+	if (!options)
+		return defaults;
+	else {
+		for ( var opt in defaults ) {
+			if ( options[ opt ] != null && options[ opt ] != undefined && options[ opt ] != 'undefined' ){
+				defaults[ opt ] = options[ opt ];
+			}
+		}
+		return defaults;
 	}
 };
 
@@ -38,7 +52,7 @@ jga.core.inherit = function(subClass, superClass) {
 jga.core.EventManager = function() {
 	this._events = {}
 }
-jga.core.EventManager.extend({
+jga.core.EventManager.methods({
 	addEventListener: function(eventName, callback) {
 		if (!this._events[eventName])
 			this._events[eventName] = [];
@@ -66,7 +80,7 @@ jga.core.Response = function(status, data) {
 	this.status = status;
 	this.data = data;
 }
-jga.core.Response.extend({
+jga.core.Response.methods({
 });
 
 jga.core.Control = function(selector, options, defaults) {
@@ -77,62 +91,37 @@ jga.core.Control = function(selector, options, defaults) {
 	self.dispatchEvent("init", self);
 	$(function() {
 		self.$node = $(selector);
+		if (self.$node.length == 0)
+			throw "Node not found";
 		self.dispatchEvent("load", self);
 	});
+	$(window).unload(function() {
+		self.dispatchEvent("unload", self);
+	});
 }
-jga.core.Control.extend({
+jga.core.Control.methods({
 	addEventListener: function(event, callback) {
 		this._events.addEventListener(event, callback);
 	},
 	removeEventListener: function(event) {
 		this._events.removeEventListener(event, callback);
 	},
-	_getOptions: function(options, defaults) {
-		if (!options)
-			return defaults;
-		else {
-			for ( var opt in defaults ) {
-				if ( options[ opt ] != null && options[ opt ] != undefined && options[ opt ] != 'undefined' ){
-					defaults[ opt ] = options[ opt ];
-				}
-			}
-			if (options.events) {
-				this._bindEvents(options.events);
-			}
-			return defaults;
-		}
-	},
 	_bindEvents: function(events) {
+		log("bind");
 		for (var event in events) {
+			log(event);
 			this.addEventListener(event, events[event]);
 		}
 	},
-	dispatchEvent: function(event, sender, data) {
-		this._events.dispatchEvent(event, sender, data);
+	_getOptions: function(options, defaults) {
+		var o = jga.core.getOptions(options, defaults);
+		if (options && options.events) {
+			this._bindEvents(options.events);
+		}
+		return o;
 	},
-	show: function() {
-		this.dispatchEvent("show", this);
-		this.$node.show();
-	},
-	fadeIn: function(callback) {
-		var self = this;
-		this.$node.fadeIn(function() {
-			self.dispatchEvent("show", self);
-			if (callback)
-				callback();
-		});
-	},
-	hide: function() {
-		this.dispatchEvent("hide", this);
-		this.$node.hide();
-	},
-	fadeOut: function(callback) {
-		var self = this;
-		this.$node.fadeOut(function() {
-			self.dispatchEvent("hide", self);
-			if (callback)
-				callback();
-		});
+	dispatchEvent: function(event, data) {
+		this._events.dispatchEvent(event, this, data);
 	},
 	focus: function() {
 		var firstInput = this.$node.find(":input").eq(0);
