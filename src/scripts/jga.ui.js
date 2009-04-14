@@ -65,11 +65,11 @@ jga.ui.TextBoxHint.methods({
         "with(obj){p.push('" +
         template
           .replace(/[\r\t\n]/g, "")
-          .split("{!").join("\t")
+          .split("<!").join("\t")
           .replace(/((^|}})[^\t]*)'/g, "$1\r")
-          .replace(/\t=(.*?)!}/g, "',$1,'")
+          .replace(/\t=(.*?)!>/g, "',$1,'")
           .split("\t").join("');")
-          .split("!}").join("p.push('")
+          .split("!>").join("p.push('")
           .split("\r").join("\\'")
       + "');}return p.join('');");
     return data ? this.html(fn( data )) : fn;
