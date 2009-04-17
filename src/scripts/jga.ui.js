@@ -116,7 +116,7 @@ jga.ui.TextBoxHint.methods({
 		});
 	};
 	$.fn.textboxHint.defaults = {
-		hintClass: 'hint'
+		hintClass: 'Hint'
 	}
 })(jQuery);
 
