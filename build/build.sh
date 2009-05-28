@@ -2,7 +2,7 @@
 
 cd ~/code/jgaui/build
 
-files=( external/jquery-1.3.1.min.js external/lowpro.jquery.js jga.core.js jga.ui.js plugins/pretty-print.js plugins/template.js plugins/tooltip.js )
+files=( external/jquery-1.3.1.min.js external/lowpro.jquery.js jga.core.js jga.ui.js plugins/prettydate.js plugins/template.js plugins/tooltip.js )
 
 rm ../lib/scripts/jga.js
 rm ../lib/scripts/jga-min.js
