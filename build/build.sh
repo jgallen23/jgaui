@@ -13,3 +13,7 @@ do
 	python jsmin.py <../src/scripts/$file >> ../lib/scripts/jga-min.js
 done
 
+#CSS - minify css at some point
+rm -r ../lib/stylesheets
+cp -r ../src/stylesheets ../lib/
+
