@@ -83,10 +83,11 @@ Date.firstDayOfWeek = 1;
  * @cat Plugins/Methods/Date
  * @author Kelvin Luck
  */
-Date.format = 'dd/mm/yyyy';
+//Date.format = 'dd/mm/yyyy';
 //Date.format = 'mm/dd/yyyy';
-//Date.format = 'yyyy-mm-dd';
+Date.format = 'yyyy-mm-dd';
 //Date.format = 'dd mmm yy';
+//Date.format = 'mm-dd-yyyy';
 
 /**
  * The first two numbers in the century to be used when decoding a two digit year. Since a two digit year is ambiguous (and date.setYear
