@@ -25,6 +25,12 @@ js = {
             'external/date.js',
             'external/jquery.datePicker.js',
         )
+    },
+    'cookies': {
+        'version': '1.0',
+        'files': (
+            'utilities/cookies.js',
+        )
     }
 }
 
