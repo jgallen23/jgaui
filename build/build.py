@@ -31,7 +31,13 @@ js = {
         'files': (
             'utilities/cookies.js',
         )
-    }
+    },
+    'sitelife': {
+        'version': '1.0',
+        'files': (
+            'plugins/sitelife.js',
+        )
+    },
 }
 
 css = {
