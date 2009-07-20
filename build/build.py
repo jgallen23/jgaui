@@ -7,32 +7,48 @@ pwd = os.path.dirname(os.path.abspath(__file__))
 os.chdir(pwd)
 
 js = {
-    'jga': (
-        'external/jquery-1.3.1.min.js',
-        'external/lowpro.jquery.js',
-        'jga.core.js',
-        'jga.ui.js',
-        'plugins/prettydate.js',
-        'plugins/template.js',
-        'plugins/tooltip.js'
-    ),
-    'datepicker': (
-        'external/date.js',
-        'external/jquery.datePicker.js',
-    )
+    'jga': {
+        'version': '1.0',
+        'files': (
+            'external/jquery-1.3.2.min.js',
+            'external/lowpro.jquery.js',
+            'jga.core.js',
+            'jga.ui.js',
+            'plugins/prettydate.js',
+            'plugins/template.js',
+            'plugins/tooltip.js'
+        )
+    },
+    'datepicker': {
+        'version': '1.0',
+        'files': (
+            'external/date.js',
+            'external/jquery.datePicker.js',
+        )
+    },
+    'cookies': {
+        'version': '1.0',
+        'files': (
+            'utilities/cookies.js',
+        )
+    }
 }
 
 css = {
-    'datepicker': (
-        'external/datePicker.css',
-    )
+    'datepicker': {
+        'version': '1.0',
+        'files': (
+            'external/datePicker.css',
+        )
+    }
 }
 
 
 for profile in js:
-    files = js[profile]
-    path = "../lib/scripts/%s.js" % profile
-    min_path = "../lib/scripts/%s-min.js" % profile
+    files = js[profile]["files"]
+    data = { "name": profile, "version": js[profile]["version"] }
+    path = "../lib/scripts/%(name)s-%(version)s.js" % data 
+    min_path = "../lib/scripts/%(name)s-%(version)s.min.js" % data
     if os.path.exists(path):
         os.remove(path)
     if os.path.exists(min_path):
@@ -43,9 +59,10 @@ for profile in js:
         os.system("python jsmin.py <../src/scripts/%(file)s >> %(min_path)s" % d)
 
 for profile in css:
-    files = css[profile]
-    path = "../lib/stylesheets/%s.css" % profile
-    min_path = "../lib/stylesheets/%s-min.css" % profile
+    files = css[profile]["files"]
+    data = { "name": profile, "version": css[profile]["version"] }
+    path = "../lib/stylesheets/%(name)s-%(version)s.css" % data
+    min_path = "../lib/stylesheets/%(name)s-%(version)s.min.css" % data
     if os.path.exists(path):
         os.remove(path)
     if os.path.exists(min_path):
