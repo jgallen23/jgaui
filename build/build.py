@@ -10,7 +10,7 @@ js = {
     'jga': {
         'version': '1.0',
         'files': (
-            'external/jquery-1.3.1.min.js',
+            'external/jquery-1.3.2.min.js',
             'external/lowpro.jquery.js',
             'jga.core.js',
             'jga.ui.js',
