@@ -1,7 +1,7 @@
 (function($){
   var templateCache = {};
   $.fn.template = function tmpl(template, data){
-    this.html($.template(template, data)); 
+    return this.html($.template(template, data)); 
   }
   $.template = function tmpl(template, data){
     var fn = !/\W/.test(template) ?
