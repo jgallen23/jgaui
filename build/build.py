@@ -14,6 +14,7 @@ js = {
             'external/lowpro.jquery.js',
             'jga.core.js',
             'jga.ui.js',
+            'utilities/arrays.js',
             'plugins/prettydate.js',
             'plugins/template.js',
             'plugins/tooltip.js'
