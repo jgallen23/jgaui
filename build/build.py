@@ -8,7 +8,7 @@ os.chdir(pwd)
 
 js = {
     'jga': {
-        'version': '1.0',
+        'version': '1.01',
         'files': (
             'external/jquery-1.3.2.min.js',
             'external/lowpro.jquery.js',
