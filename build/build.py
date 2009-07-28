@@ -17,7 +17,8 @@ js = {
             'utilities/arrays.js',
             'plugins/prettydate.js',
             'plugins/template.js',
-            'plugins/tooltip.js'
+            'plugins/tooltip.js',
+            'plugins/textboxhint.js'
         )
     },
     'datepicker': {
