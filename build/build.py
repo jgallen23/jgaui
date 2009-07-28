@@ -55,8 +55,8 @@ css = {
 for profile in js:
     files = js[profile]["files"]
     data = { "name": profile, "version": js[profile]["version"] }
-    path = "../lib/scripts/%(name)s-%(version)s.js" % data 
-    min_path = "../lib/scripts/%(name)s-%(version)s.min.js" % data
+    path = "../lib/scripts/%(name)s.js" % data 
+    min_path = "../lib/scripts/%(name)s.min.js" % data
     if os.path.exists(path):
         os.remove(path)
     if os.path.exists(min_path):
@@ -69,8 +69,8 @@ for profile in js:
 for profile in css:
     files = css[profile]["files"]
     data = { "name": profile, "version": css[profile]["version"] }
-    path = "../lib/stylesheets/%(name)s-%(version)s.css" % data
-    min_path = "../lib/stylesheets/%(name)s-%(version)s.min.css" % data
+    path = "../lib/stylesheets/%(name)s.css" % data
+    min_path = "../lib/stylesheets/%(name)s.min.css" % data
     if os.path.exists(path):
         os.remove(path)
     if os.path.exists(min_path):
