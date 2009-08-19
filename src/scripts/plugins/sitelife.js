@@ -15,10 +15,12 @@
 			rb.BeginRequest(this.options.serverUrl, function(response) { self.populate(response); });
 		},
 		populate: function(data) {
-			console.log(data);
+			if (this.options.debug)
+				console.log(data);
 			this.element.template(this.options.templateId, data);
 		},
 	}, {
+		debug: false,
 		serverUrl: "",
 		getRequests: function() { return []; },
 		templateId: ""
