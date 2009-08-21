@@ -19,6 +19,7 @@
 				}
 				this.nextButton.show();
 				this.slide();
+				return false;
 			},
 			'.next': function(element, event) {
 				if (this._currentPage < this._totalPages)
@@ -31,10 +32,11 @@
 				}
 				this.prevButton.show();
 				this.slide();
+				return false;
 			}
 		}),
 		slide: function() {
-			$("ul", this.element).animate({"left": -(this._currentPage-1)*this.options.elementWidth});
+			$("ul", this.element).animate({"left": -(this._currentPage-1)*(this.options.elementWidth * this.options.numberPerPage)});
 		}
 	}, {
 		elementWidth: 100,

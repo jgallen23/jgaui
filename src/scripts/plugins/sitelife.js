@@ -18,6 +18,7 @@
 			if (this.options.debug)
 				console.log(data);
 			this.element.template(this.options.templateId, data);
+			this.dispatchEvent("PostRender", data)
 		},
 	}, {
 		debug: false,
