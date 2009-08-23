@@ -20,6 +20,7 @@ js = {
             'plugins/tooltip.js',
             'plugins/textboxhint.js',
             'plugins/slider.js',
+            'plugins/querystring.js',
         )
     },
     'datepicker': {
