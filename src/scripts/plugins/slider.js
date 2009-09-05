@@ -19,6 +19,7 @@
 				}
 				this.nextButton.css("visibility", "visible");
 				this.slide();
+				this.dispatchEvent("Prev");
 				return false;
 			},
 			'.next': function(element, event) {
@@ -32,6 +33,7 @@
 				}
 				this.prevButton.css("visibility", "visible");
 				this.slide();
+				this.dispatchEvent("Next");
 				return false;
 			}
 		}),
