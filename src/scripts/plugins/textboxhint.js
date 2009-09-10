@@ -33,6 +33,12 @@
 	$.fn.textboxHint.defaults = {
 		hintClass: 'Hint'
 	}
+	$.fn.isTextValid = function() {
+		if (this.data("textBoxHintValue") != this.val() && this.val() != "")
+			return true;
+		else
+			return false;
+	}
 })(jQuery);
 
 
