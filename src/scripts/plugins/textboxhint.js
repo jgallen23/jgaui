@@ -17,6 +17,7 @@
 
 		return this.each(function() {
 			var $this = $(this);
+			$this.data("textBoxHintValue", hint);
 			$this.bind("focus", function() {
 				if ($this.val() == hint)
 					hideHint.call($this)
