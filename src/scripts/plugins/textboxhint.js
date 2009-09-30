@@ -7,12 +7,16 @@
 			this
 				.removeClass(opts.hintClass)
 				.val('');
+            if (opts.onHideHint)
+                opts.onHideHint.call(this);
 		};
 
 		var showHint = function() {
 			this
 				.addClass(opts.hintClass)
 				.val(hint);
+            if (opts.onShowHint)
+                opts.onShowHint.call(this);
 		};
 
 		return this.each(function() {
