@@ -33,3 +33,11 @@ Array.prototype.contains = function(obj) {
 			return true;
 	}
 };
+
+Array.prototype.clone = function() {
+	var clone = [];
+	for (var i = 0; i < this.length; i++) {
+		clone.push(this[i]);
+	}
+	return clone;
+};
