@@ -27,3 +27,17 @@ Array.prototype.filter = function(f) {
 	}
 	return filter;
 };
+Array.prototype.contains = function(obj) {
+	for (var i = 0; i < this.length; i++) {
+		if (obj == this[i])
+			return true;
+	}
+};
+
+Array.prototype.clone = function() {
+	var clone = [];
+	for (var i = 0; i < this.length; i++) {
+		clone.push(this[i]);
+	}
+	return clone;
+};
