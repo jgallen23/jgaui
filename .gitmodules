@@ -1,0 +1,3 @@
+[submodule "ext/lowpro"]
+	path = ext/lowpro
+	url = git://github.com/jgallen23/low-pro-for-jquery.git 
