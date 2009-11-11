@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script src="../../lib/scripts/jga.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(function($) {
+				var d1 = new Date();
+				var html = '';
+				for (var i = 0; i < 200; i++) {
+					html += $.template("test_template", { item: 'name'+i });
+				}
+				$("#container").html(html);
+				var d2 = new Date();
+				console.log(d2 - d1);
+			});
+		</script>
+	</head>
+	<body>		
+		<script type="text/html" id="test_template">
+			 <li>
+				 {!=item!}
+			 </li>
+		</script>
+		<div id="container">
+			<ul></ul>
+		</div>
+	</body>
+</html>
+
