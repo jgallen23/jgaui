@@ -40,7 +40,7 @@
 			} else {
 				this.prevButton.css("visibility", "visible");
 			}
-			if (this._totalPages == (this._currentPage)) {
+			if (this._totalPages <= (this._currentPage)) {
 				this.nextButton.css("visibility", "hidden");
 			} else {
 				this.nextButton.css("visibility", "visible");
