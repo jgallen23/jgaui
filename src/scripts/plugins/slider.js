@@ -53,6 +53,7 @@
 			this._totalItems = $("li", this.element).length;
 			this._totalPages = Math.ceil(this._totalItems/this.options.numberPerPage);
 			this._checkNav();
+			this.dispatchEvent("UpdateCounts");
 		}
 	}, {
 		elementWidth: 100,
