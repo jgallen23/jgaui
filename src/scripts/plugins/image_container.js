@@ -30,8 +30,14 @@
 
 		return this.each(function() {
 			var $this = $(this);
-			var $container = $this.wrap("<span/>").parent();
-			$container.css({ height: opts.h, width: opts.w, display: 'block' })
+			if (opts.useParentContainer) {
+				var $container = $this.parent();
+				opts.h = $container.height();
+				opts.w = $container.width();
+			} else {
+				var $container = $this.wrap("<span/>").parent();
+				$container.css({ height: opts.h, width: opts.w, display: 'block' })
+			}
 			if ($this.width() == 0) {
 				$this.bind("load", resize);
 			} else {
@@ -43,6 +49,7 @@
 	$.fn.imageContainer.defaults = {
 		h: 200,
 		w: 200,
-		align: 'center'
+		align: 'center',
+		useParentContainer: false
 	}
 })(jQuery);
