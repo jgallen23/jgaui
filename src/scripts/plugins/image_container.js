@@ -52,4 +52,12 @@
 		align: 'center',
 		useParentContainer: false
 	}
+
+	$.fn.imageContainer.autoDefaults = {
+		align: 'center',
+		useParentContainer: true
+	}
+	$(function() {
+		$("img[rel*='imageContainer']").imageContainer($.fn.imageContainer.autoDefaults);
+	});
 })(jQuery);

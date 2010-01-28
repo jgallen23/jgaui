@@ -10,11 +10,12 @@
 		</style>
 		<script type="text/javascript">
 			jQuery(function($) {
-				$("img:lt(3)").imageContainer({
+				
+				$("div.block:eq(0) img").imageContainer({
 					useParentContainer: true,
 					align: 'center'
 				});
-				$("img:gt(2)").imageContainer({
+				$("div.block:eq(1) img").imageContainer({
 					h: 200,
 					w: 200,
 					align: 'center',
@@ -24,25 +25,39 @@
 		</script>
 	</head>
 	<body>
-		<div class="container">
-			<img src="http://t2.gstatic.com/images?q=tbn:6ziGMtr8PxSJ4M:http://static.squidoo.com/resize/squidoo_images/-1/draft_lens1441580module8530159photo_Dog_Medicine_Side_Effects5.jpg1204589384"/>
+		<div class="block">
+			<div class="container">
+				<img src="http://t2.gstatic.com/images?q=tbn:6ziGMtr8PxSJ4M:http://static.squidoo.com/resize/squidoo_images/-1/draft_lens1441580module8530159photo_Dog_Medicine_Side_Effects5.jpg1204589384"/>
+			</div>
+			<div class="container">
+				<img src="http://www.dogbreedinfo.com/images17/NorthernInuitDogFreya14wks.JPG"/>
+			</div>
+			<div class="container">
+				<img src="http://www.pewsey.org.uk/family/steven/images/about%20me/dog-large%5B1%5D.jpg"/>
+			</div>
 		</div>
-		<div class="container">
-			<img src="http://www.dogbreedinfo.com/images17/NorthernInuitDogFreya14wks.JPG"/>
+		<div class="block">
+			<div class="container">
+				<img src="http://t2.gstatic.com/images?q=tbn:6ziGMtr8PxSJ4M:http://static.squidoo.com/resize/squidoo_images/-1/draft_lens1441580module8530159photo_Dog_Medicine_Side_Effects5.jpg1204589384"/>
+			</div>
+			<div class="container">
+				<img src="http://www.dogbreedinfo.com/images17/NorthernInuitDogFreya14wks.JPG"/>
+			</div>
+			<div class="container">
+				<img src="http://www.pewsey.org.uk/family/steven/images/about%20me/dog-large%5B1%5D.jpg"/>
+			</div>
 		</div>
-		<div class="container">
-			<img src="http://www.pewsey.org.uk/family/steven/images/about%20me/dog-large%5B1%5D.jpg"/>
+		<div class="block">
+			<div class="container">
+				<img rel="imageContainer" src="http://t2.gstatic.com/images?q=tbn:6ziGMtr8PxSJ4M:http://static.squidoo.com/resize/squidoo_images/-1/draft_lens1441580module8530159photo_Dog_Medicine_Side_Effects5.jpg1204589384"/>
+			</div>
+			<div class="container">
+				<img rel="imageContainer" src="http://www.dogbreedinfo.com/images17/NorthernInuitDogFreya14wks.JPG"/>
+			</div>
+			<div class="container">
+				<img rel="imageContainer" src="http://www.pewsey.org.uk/family/steven/images/about%20me/dog-large%5B1%5D.jpg"/>
+			</div>
 		</div>
-		<div class="container">
-			<img src="http://t2.gstatic.com/images?q=tbn:6ziGMtr8PxSJ4M:http://static.squidoo.com/resize/squidoo_images/-1/draft_lens1441580module8530159photo_Dog_Medicine_Side_Effects5.jpg1204589384"/>
-		</div>
-		<div class="container">
-			<img src="http://www.dogbreedinfo.com/images17/NorthernInuitDogFreya14wks.JPG"/>
-		</div>
-		<div class="container">
-			<img src="http://www.pewsey.org.uk/family/steven/images/about%20me/dog-large%5B1%5D.jpg"/>
-		</div>
-
 	</body>
 </html>
 
