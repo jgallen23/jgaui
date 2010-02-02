@@ -43,6 +43,12 @@
 				var $container = $this.wrap("<span/>").parent();
 				$container.css({ height: opts.h, width: opts.w, display: 'block' })
 			}
+			if ($this.hasClass("jsImageContainerAlignTop"))
+				opts.align = "top";
+			else if ($this.hasClass("jsImageContainerAlignCenter"))
+				opts.align = "center";
+			else if ($this.hasClass("jsImageContainerAlignBottom"))
+				opts.align = "bottom";
 			if ($this.width() == 0) {
 				$this.bind("load", resize);
 			} else {
@@ -54,12 +60,12 @@
 	$.fn.imageContainer.defaults = {
 		h: 200,
 		w: 200,
-		align: 'center',
+		align: 'top',
 		useParentContainer: false
 	}
 
 	$.fn.imageContainer.autoDefaults = {
-		align: 'center',
+		align: 'top',
 		useParentContainer: true,
 		autoRun: true
 	}
