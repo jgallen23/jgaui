@@ -13,6 +13,11 @@
 					(opts.w - w)/2,
 					(opts.h - h)
 				];
+			} else if (opts.align == "top") {
+				return [
+					(opts.w - w)/2,
+					0
+				];
 			}
 		}
 
@@ -55,9 +60,12 @@
 
 	$.fn.imageContainer.autoDefaults = {
 		align: 'center',
-		useParentContainer: true
+		useParentContainer: true,
+		autoRun: true
 	}
 	$(function() {
-		$("img[rel*='imageContainer']").imageContainer($.fn.imageContainer.autoDefaults);
+		if ($.fn.imageContainer.autoDefaults.autoRun) {
+			$("img.jsImageContainer").imageContainer($.fn.imageContainer.autoDefaults);
+		}
 	});
 })(jQuery);
