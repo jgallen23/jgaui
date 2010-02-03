@@ -28,9 +28,20 @@
 				this.width = opts.w;
 			} else if (this.height > this.width && this.height > opts.h) {
 				this.height = opts.h;
+			} else if (this.height == this.width) {
+				if (opts.h >= opts.w) 
+					this.height = opts.h;
+				else
+					this.width = opts.w;
 			}
 			var offsets = getOffsets(this.width, this.height);
+			debug("ImageContainer Offsets", offsets);
 			$img.css({ marginTop: offsets[1], marginLeft: offsets[0] });
+		}
+		
+		var debug = function() {
+			if (opts.debug)
+				console.log.apply(this, arguments);
 		}
 
 		return this.each(function() {
@@ -49,6 +60,7 @@
 				opts.align = "center";
 			else if ($this.hasClass("jsImageContainerAlignBottom"))
 				opts.align = "bottom";
+			debug("ImageContainer", $this, $container, opts.w, opts.h, opts.align);
 			if ($this.width() == 0) {
 				$this.bind("load", resize);
 			} else {
@@ -61,7 +73,8 @@
 		h: 200,
 		w: 200,
 		align: 'top',
-		useParentContainer: false
+		useParentContainer: false,
+		debug: false
 	}
 
 	$.fn.imageContainer.autoDefaults = {
