@@ -29,9 +29,9 @@
 			} else if (this.height > this.width && this.height > opts.h) {
 				this.height = opts.h;
 			} else if (this.height == this.width) {
-				if (opts.h >= opts.w) 
+				if (opts.h >= opts.w && this.height > opts.h) 
 					this.height = opts.h;
-				else
+				else if (this.width > opts.w)
 					this.width = opts.w;
 			}
 			var offsets = getOffsets(this.width, this.height);
