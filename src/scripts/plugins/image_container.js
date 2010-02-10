@@ -1,6 +1,6 @@
 (function($) {
 	$.fn.imageContainer = function(options) {
-		var opts = $.extend($.fn.imageContainer.defaults, options);
+		var opts = $.extend({}, $.fn.imageContainer.defaults, options);
 
 		var getOffsets = function(w, h) {
 			if (opts.align == "center") {
