@@ -23,7 +23,7 @@
 
 		var resize = function() {
 			var $img = $(this);
-			
+			debug("ImageContainer Size", $img, this.width, this.height, opts.w, opts.h, opts.align);	
 			if (this.width >= this.height && this.width > opts.w) {
 				this.width = opts.w;
 			} else if (this.height > this.width && this.height > opts.h) {
@@ -60,7 +60,6 @@
 				opts.align = "center";
 			else if ($this.hasClass("jsImageContainerAlignBottom"))
 				opts.align = "bottom";
-			debug("ImageContainer", $this, $container, opts.w, opts.h, opts.align);
 			if ($this.width() == 0) {
 				$this.bind("load", resize);
 			} else {
