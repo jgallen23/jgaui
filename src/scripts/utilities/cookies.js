@@ -21,6 +21,4 @@ var cookies = {
 	eraseCookie: function(name) {
 		createCookie(name,"",-1);
 	}
-}
-
-
+};
