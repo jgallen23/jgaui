@@ -1,0 +1,16 @@
+.BulletList { list-style-type:disc; margin-left: 20px; }
+
+.HorizontalList { list-style-type:none; }
+	.HorizontalList li { float:left; display:inline; }
+
+.ThumbList { margin:0px; padding:0px; list-style-type:none; }
+	.ThumbList li { margin:0px; padding:8px 0px; }
+	.ThumbList .itemAvatar { display:block; float:left; margin-right:10px; }
+	.ThumbList .itemContent { float:left; }
+
+.SliderList {  }
+	.SliderList .sliderWindow { padding:0; position:relative; overflow:hidden; }
+	.SliderList .sliderWindow ul { list-style-type:none; width:900000px; padding:0; position:absolute; left:0px; z-index: 0; }
+		.SliderList .sliderWindow ul li { float:left; overflow:hidden; }
+			.SliderList .sliderWindow ul li ul { list-style-type:disc; position:relative; width:auto; left:auto; }
+				.SliderList .sliderWindow ul li ul li { float:none; overflow:visible; }	
