@@ -1,0 +1,37 @@
+output_dir: 'build'
+css:
+  jga:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/stylesheets/common.css'
+      - 'src/stylesheets/modules.css'
+  datepicker:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/stylesheets/external/datePicker.css'
+js:
+  jga:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/scripts/jga.core.js'
+      - 'src/scripts/jga.ui.js'
+  datepicker:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/scripts/external/date.js'
+      - 'src/scripts/external/jquery.datePicker.js'
+  cookies:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/scripts/utilities/cookies.js'
+  sitelife:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/scripts/plugins/sitelife.js'
+
