@@ -20,6 +20,13 @@ js:
       - 'src/scripts/external/lowpro.jquery.js'
       - 'src/scripts/jga.core.js'
       - 'src/scripts/jga.ui.js'
+      - 'src/scripts/utilities/arrays.js'
+      - 'src/scripts/plugins/prettydate.js'
+      - 'src/scripts/plugins/template.js'
+      - 'src/scripts/plugins/tooltip.js'
+      - 'src/scripts/plugins/textboxhint.js'
+      - 'src/scripts/plugins/slider.js'
+      - 'src/scripts/plugins/querystring.js'
   datepicker:
     plain: True
     auto_version: False
