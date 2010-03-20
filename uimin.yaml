@@ -16,6 +16,8 @@ js:
     plain: True
     auto_version: False
     files:
+      - 'src/scripts/external/jquery-1.4.2.min.js'
+      - 'src/scripts/external/lowpro.jquery.js'
       - 'src/scripts/jga.core.js'
       - 'src/scripts/jga.ui.js'
   datepicker:
